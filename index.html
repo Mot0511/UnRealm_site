@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Example 1</title>
+  <style>
+  body{
+	background: grey;
+	
+  }
+  .block1{
+	background: #424242;
+	width: 200px;
+	height: 400px;
+	float: left;
+	margin-left: 20px;
+	}
+	.block2{
+	background: #424242;
+	width: 400px;
+	height: 300px;
+	float: left;
+	margin-left: 20px;
+	padding: 10px;
+	}
+	.block3{
+	background: #424242;
+	width: 200px;
+	height: 400px;
+	float: left;
+	margin-left: 20px;
+	padding: 10px;
+	}
+	.main{
+	margin-top: 10%;
+	margin-left: 15%;
+	
+	}
+	.icon{
+		background: grey;
+		height: 100px;
+		
+	}
+	.nick{
+	border: 1px solid orange;
+	width: 49%;
+	height: 35px;
+	margin-top: 10px;
+	
+	}
+	.f_bt{
+		width: 49%;
+		height: 40px;
+		background: orange;
+		border: 0px;
+	}
+	.f_bt:hover{
+	background: #cc7a00;
+	}
+	.block2 select{
+		width: 100%;
+		margin-top: 5px;
+		height: 40px;
+	}
+	.play{
+	width: 100%;
+	height: 40px;
+	background: #00abd1;
+	margin-top: 10px;
+	border: 0px;
+	}
+	.spec{
+	width: 100%;
+	height: 40px;
+	background: orange;
+	margin-top: 10px;
+	border: 0px;
+	}
+	.play, .spec, .f_bt{
+		color: white;
+	}
+	.spec:hover{
+	background: #cc7a00;
+	}
+	.play:hover{
+	background: #009c9c;
+	}
+	.menu{
+	display: flex;
+	
+	}
+	.sett_bt{
+		background: orange;
+		width: 49%;
+		border: 0px;
+		height: 40px;
+		color: white;
+		
+	}
+	.sc_bt{
+		background: #cc7a00;
+		width: 49%;
+		border: 0px;
+		height: 40px;
+		color: white;
+		margin-left: 1%;
+		
+	}
+	.sett{
+		height: 30px;
+		background: orange;
+		width: 100%;
+		padding-top: 5px;
+		margin-top: 10px;
+	}
+	.in_block1{
+		padding: 10px;
+	}
+	.sett label, input{
+		color: white;
+	}
+	.sc{
+	display: flex;
+	margin-top: 10px;
+	}
+	.sc_info1{
+	background: #cc7a00;
+	padding: 10px;
+	color: white;
+	
+	}
+	.sc_info2{
+	background: orange;
+	padding: 10px;
+	color: white;
+	margin-left: 10px;
+	}
+	.skin{
+	width: 100px;
+	height: 100px;
+	background: grey;
+	margin-top: 10px;
+	margin-left: 25%;
+	border-radius: 50px;
+	}
+  </style>
+ </head>
+ <body>
+ <div class="main">
+	<div class="block1" id="block1">
+		<div class="menu">
+			<button class="sett_bt" id="sett_bt" onclick="sett()">Settings</button>
+			<button class="sc_bt" id="sc_bt" onclick="sc()">Shortcuts</button>
+			
+		</div>
+		<div class="in_block1" id="in_block1">
+				<center><div class="sett">
+					<input type="checkbox" id="check1" class="checkbox">
+					<label for="check1">Hide Skins</label>
+				</div><center>
+				<center><div class="sett">
+					<input type="checkbox" id="check2" class="checkbox">
+					<label for="check2">Hide Names</label>
+				</div><center>
+				<center><div class="sett">
+					<input type="checkbox" id="check3" class="checkbox">
+					<label for="check3">Dark Theme</label>
+				</div><center>
+				<center><div class="sett">
+					<input type="checkbox" id="check4" class="checkbox">
+					<label for="check4">efect</label>
+				</div><center>
+				</div>
+				
+			</div>
+	</div>
+	<div class="block2">
+		<div class="icon">
+			ico
+		</div>
+		<input type="text" class="nick" placeholder="Nick name">
+		<input type="button" class="f_bt" value="Fancy Nick">
+		<select>
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		</select>
+		<input type="button" class="play" value="Play">
+		<input type="button" class="spec" value="Spectate">
+	</div>
+	<div class="block3">
+		<div class="menu">
+			<button class="sett_bt" id="skin" onclick="skin_bt()">Skin</button>
+			<button class="sc_bt" id="about" onclick="about_bt()">About</button>
+			
+		</div>
+		<div class="in_block3" id="in_block3">
+		<div class="skin">
+		
+		</div>
+		<input type="button" class="play" value="Select skin">
+		</div>
+	</div>
+	</div>
+	<script>
+	var sett_bt = document.getElementById('sett_bt');
+	var sc_bt = document.getElementById('sc_bt');
+	var in_block1 = document.getElementById('in_block1');
+	var in_block3 = document.getElementById('in_block3');
+	var block1 = document.getElementById('block1');
+	
+	var skin = document.getElementById('skin');
+	var about = document.getElementById('about');
+	function skin_bt(){
+		skin.style = 'background: orange;'
+		about.style = 'background: #cc7a00;'
+		in_block3.innerHTML = '\
+		<div class="skin">\
+		\
+		</div>\
+		<input type="button" class="play" value="Select skin">\
+		'
+	}
+	function about_bt(){
+		skin.style = 'background: #cc7a00;'
+		about.style = 'background: orange;'
+		in_block3.innerHTML = 'About us'
+	}
+	function sett(){
+		sett_bt.style = 'background: orange;'
+		sc_bt.style = 'background: #cc7a00;'
+		in_block1.innerHTML = '<center><div class="sett"><input type="checkbox" id="check1" class="checkbox"><label for="check1">Hide Skins</label></div><center><center><div class="sett">\<input type="checkbox" id="check2" class="checkbox">\<label for="check2">Hide Names</label>\</div><center>\<center><div class="sett">\<input type="checkbox" id="check3" class="checkbox"><label for="check3">Dark Theme</label></div><center><center><div class="sett"><input type="checkbox" id="check4" class="checkbox"><label for="check4">efect</label></div><center>'
+		block1.style = 'height: 400px;'
+	}
+	function sc(){
+		sett_bt.style = 'background: #cc7a00;'
+		sc_bt.style = 'background: orange;'
+		block1.style = 'height: 500px;'
+		in_block1.innerHTML = '\
+		<div class="sc">\
+					<span class="sc_info1">W</span>\
+					<span class="sc_info2">Feed</span>\
+				</div>\
+				<div class="sc">\
+					<span class="sc_info1">E</span>\
+					<span class="sc_info2">Feed Macro</span>\
+				</div>\
+				<div class="sc">\
+					<span class="sc_info1">SPACE</span>\
+					<span class="sc_info2">Split</span>\
+				</div>\
+				<div class="sc">\
+					<span class="sc_info1">CTRL</span>\
+					<span class="sc_info2">Split Macro</span>\
+				</div>\
+				<div class="sc">\
+					<span class="sc_info1">F</span>\
+					<span class="sc_info2">Pause / Unpause</span>\
+				</div>\
+				<div class="sc">\
+					<span class="sc_info1">Enter</span>\
+					<span class="sc_info2">Chat</span>\
+				</div>\
+				<div class="sc">\
+					<span class="sc_info1">R</span>\
+					<span class="sc_info2">Clear around</span>\
+				</div>\
+				<div class="sc">\
+					<span class="sc_info1">ESC</span>\
+					<span class="sc_info2">Menu</span>\
+				</div>\
+				<div class="sc">\
+					<span class="sc_info1">C</span>\
+					<span class="sc_info2">Shere location</span>\
+				</div>\
+		'
+		
+	}
+	</script>
+ </body>
+</html>
