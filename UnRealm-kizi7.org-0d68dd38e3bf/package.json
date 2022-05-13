@@ -1,0 +1,22 @@
+{
+  "name": "sigmally-client",
+  "version": "1.2.3",
+  "description": "Sigmally client",
+  "scripts": {
+    "start": "node webserver.js",
+    "dev": "nodemon webserver.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://github.com/Cigar2/Cigar2"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
